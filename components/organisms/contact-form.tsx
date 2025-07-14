@@ -71,7 +71,10 @@ export function ContactForm() {
                   onChange={(e) => updateFormData("mensagem", e.target.value)}
                 />
               </div>
-              <Button type="submit" className="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3">
+              <Button
+                type="submit"
+                className="w-full bg-luminar-yellow hover:bg-yellow-600 text-luminar-blue py-3 font-semibold"
+              >
                 Enviar
               </Button>
             </form>

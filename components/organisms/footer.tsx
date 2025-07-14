@@ -1,6 +1,7 @@
-import { Sun, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react"
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react"
 import { SocialIcon } from "../molecules/social-icon"
 import { Heading3, BodyText } from "../atoms/typography"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -8,10 +9,13 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <Sun className="h-8 w-8 text-yellow-500" />
-              <span className="text-2xl font-bold">Luminar Solar</span>
-            </div>
+            <Image
+              src="/logo-luminar.png"
+              alt="Luminar Solar - Arquitetura & Engenharia"
+              width={250}
+              height={60}
+              className="h-10 w-auto brightness-0 invert"
+            />
             <BodyText className="text-gray-400">Especialistas em energia solar fotovoltaica</BodyText>
           </div>
 

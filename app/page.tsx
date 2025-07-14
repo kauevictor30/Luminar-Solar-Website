@@ -12,7 +12,9 @@ import { FinancingSection } from "@/components/organisms/financing-section"
 import { CTASection } from "@/components/organisms/cta-section"
 import { ContactForm } from "@/components/organisms/contact-form"
 import { Footer } from "@/components/organisms/footer"
+import { MapsSection } from "@/components/organisms/maps-section"
 
+// Add maps prop to the template
 export default function HomePage() {
   return (
     <LandingPageTemplate
@@ -22,6 +24,7 @@ export default function HomePage() {
       about={<AboutSection />}
       howItWorks={<HowItWorksSection />}
       simulator={<EconomySimulator />}
+      maps={<MapsSection />}
       projects={<ProjectsGallery />}
       testimonials={<TestimonialsSection />}
       financing={<FinancingSection />}

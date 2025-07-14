@@ -7,6 +7,7 @@ interface LandingPageTemplateProps {
   about: React.ReactNode
   howItWorks: React.ReactNode
   simulator: React.ReactNode
+  maps: React.ReactNode
   projects: React.ReactNode
   testimonials: React.ReactNode
   financing: React.ReactNode
@@ -22,6 +23,7 @@ export function LandingPageTemplate({
   about,
   howItWorks,
   simulator,
+  maps,
   projects,
   testimonials,
   financing,
@@ -37,6 +39,7 @@ export function LandingPageTemplate({
       {about}
       {howItWorks}
       {simulator}
+      {maps}
       {projects}
       {testimonials}
       {financing}
