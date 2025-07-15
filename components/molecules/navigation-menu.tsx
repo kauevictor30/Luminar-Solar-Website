@@ -9,7 +9,7 @@ interface NavigationMenuProps {
 }
 
 /**
- * Menu de navegação responsivo com links para seções da página
+ * Menu de navegação otimizado para mobile
  */
 export function NavigationMenu({ className = "" }: NavigationMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
@@ -35,12 +35,12 @@ export function NavigationMenu({ className = "" }: NavigationMenuProps) {
   return (
     <nav className={className}>
       {/* Desktop Menu */}
-      <div className="hidden md:flex space-x-8">
+      <div className="hidden lg:flex space-x-6 xl:space-x-8">
         {menuItems.map((item) => (
           <button
             key={item.label}
             onClick={() => handleLinkClick(item.href)}
-            className="text-gray-700 hover:text-luminar-blue transition-colors font-medium dark:text-gray-300 dark:hover:text-luminar-yellow"
+            className="text-gray-700 hover:text-luminar-blue transition-colors font-medium dark:text-gray-300 dark:hover:text-luminar-yellow text-sm xl:text-base"
           >
             {item.label}
           </button>
@@ -48,32 +48,38 @@ export function NavigationMenu({ className = "" }: NavigationMenuProps) {
       </div>
 
       {/* Mobile Menu Button */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <Button
           variant="ghost"
           size="sm"
           onClick={() => setIsOpen(!isOpen)}
-          className="text-gray-700 dark:text-gray-300"
+          className="text-gray-700 dark:text-gray-300 p-2"
         >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </Button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-lg border-t md:hidden z-50">
-          <div className="py-4 px-4 space-y-2">
-            {menuItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => handleLinkClick(item.href)}
-                className="block w-full text-left py-2 px-4 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 rounded-md transition-colors"
-              >
-                {item.label}
-              </button>
-            ))}
+        <>
+          {/* Backdrop */}
+          <div className="fixed inset-0 bg-black/50 lg:hidden z-40" onClick={() => setIsOpen(false)} />
+
+          {/* Menu Panel */}
+          <div className="fixed top-[73px] left-0 right-0 bg-white dark:bg-gray-900 shadow-lg border-t lg:hidden z-50 max-h-[calc(100vh-73px)] overflow-y-auto">
+            <div className="py-4 px-4 space-y-1">
+              {menuItems.map((item) => (
+                <button
+                  key={item.label}
+                  onClick={() => handleLinkClick(item.href)}
+                  className="block w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 rounded-md transition-colors font-medium"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
+        </>
       )}
     </nav>
   )

@@ -3,7 +3,7 @@ import { Heading2, BodyText } from "../atoms/typography"
 import { Button } from "@/components/ui/button"
 
 /**
- * Seção do blog com posts sobre energia solar
+ * Seção do blog otimizada para mobile
  */
 export function BlogSection() {
   const blogPosts = [
@@ -70,17 +70,17 @@ export function BlogSection() {
   ]
 
   return (
-    <section id="blog" className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors">
+    <section id="blog" className="py-12 sm:py-16 bg-gray-50 dark:bg-gray-800 transition-colors">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <Heading2 className="text-gray-900 dark:text-white mb-4">Blog Luminar Solar</Heading2>
-          <BodyText className="text-lg dark:text-gray-300 max-w-2xl mx-auto">
+          <BodyText className="text-base sm:text-lg dark:text-gray-300 max-w-2xl mx-auto">
             Fique por dentro das últimas novidades, dicas e insights sobre energia solar. Conteúdo especializado por
             nossos experts.
           </BodyText>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {blogPosts.map((post, index) => (
             <BlogCard key={index} {...post} />
           ))}
@@ -89,7 +89,7 @@ export function BlogSection() {
         <div className="text-center">
           <Button
             variant="outline"
-            className="border-luminar-blue text-luminar-blue hover:bg-luminar-blue hover:text-white dark:border-luminar-yellow dark:text-luminar-yellow dark:hover:bg-luminar-yellow dark:hover:text-luminar-blue bg-transparent"
+            className="border-luminar-blue text-luminar-blue hover:bg-luminar-blue hover:text-white dark:border-luminar-yellow dark:text-luminar-yellow dark:hover:bg-luminar-yellow dark:hover:text-luminar-blue bg-transparent w-full sm:w-auto"
           >
             Ver todos os posts
           </Button>

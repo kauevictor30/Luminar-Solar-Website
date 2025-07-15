@@ -11,15 +11,17 @@ interface BenefitCardProps {
 }
 
 /**
- * Card para exibir benefícios com ícone, título e descrição
+ * Card de benefício otimizado para mobile
  */
 export function BenefitCard({ icon, title, description, variant = "success" }: BenefitCardProps) {
   return (
-    <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-      <CardContent className="space-y-4">
-        <IconWrapper variant={variant}>{icon}</IconWrapper>
-        <Heading3>{title}</Heading3>
-        <BodyText>{description}</BodyText>
+    <Card className="text-center p-4 sm:p-6 hover:shadow-lg transition-shadow h-full">
+      <CardContent className="space-y-3 sm:space-y-4 flex flex-col items-center">
+        <IconWrapper variant={variant} size="sm" className="sm:w-16 sm:h-16">
+          {icon}
+        </IconWrapper>
+        <Heading3 className="text-center">{title}</Heading3>
+        <BodyText className="text-center">{description}</BodyText>
       </CardContent>
     </Card>
   )
