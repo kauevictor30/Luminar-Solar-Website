@@ -15,6 +15,7 @@ import { ContactForm } from "@/components/organisms/contact-form"
 import { Footer } from "@/components/organisms/footer"
 import { ImprovedMapsSection } from "@/components/organisms/improved-maps-section"
 import { PartnersSection } from "@/components/organisms/partners-section"
+import { BlogSection } from "@/components/organisms/blog-section"
 import { FAQSection } from "@/components/organisms/faq-section"
 
 /**
@@ -37,6 +38,7 @@ export default function HomePage() {
         financing={<FinancingSection />}
         cta={<CTASection />}
         contact={<ContactForm />}
+        blog={<BlogSection />}
         faq={<FAQSection />}
         footer={<Footer />}
       />
