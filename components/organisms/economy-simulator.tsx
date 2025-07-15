@@ -5,6 +5,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Heading2, Heading3 } from "../atoms/typography"
 
+/**
+ * Simulador de economia com energia solar
+ */
 export function EconomySimulator() {
   const [contaLuz, setContaLuz] = useState("")
 
@@ -18,10 +21,10 @@ export function EconomySimulator() {
   const economia = contaLuz ? calcularEconomia(Number.parseFloat(contaLuz)) : null
 
   return (
-    <section className="py-16">
+    <section className="py-16 bg-luminar-background dark:bg-gray-900 transition-colors">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <Heading2 className="mb-6 text-gray-900">Simule sua economia</Heading2>
+          <Heading2 className="mb-6 text-gray-900 dark:text-white">Simule sua economia</Heading2>
           <Card className="p-8">
             <CardContent className="space-y-6">
               <div>

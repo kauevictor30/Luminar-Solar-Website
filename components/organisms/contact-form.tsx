@@ -6,7 +6,11 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ContactField } from "../molecules/contact-field"
 import { Heading2 } from "../atoms/typography"
+import { siteConfig } from "@/config/site"
 
+/**
+ * Formulário de contato
+ */
 export function ContactForm() {
   const [formData, setFormData] = useState({
     nome: "",
@@ -18,8 +22,25 @@ export function ContactForm() {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+
+    // Aqui você implementaria o envio do formulário para um backend
     console.log("Formulário enviado:", formData)
-    alert("Obrigado! Entraremos em contato em breve.")
+
+    // Mensagem de WhatsApp formatada
+    const mensagemWhatsApp = `Olá, sou ${formData.nome} de ${formData.cidade}. ${formData.mensagem}`
+    const whatsappUrl = `${siteConfig.contact.whatsappUrl}?text=${encodeURIComponent(mensagemWhatsApp)}`
+
+    // Redirecionar para o WhatsApp
+    window.open(whatsappUrl, "_blank")
+
+    // Limpar formulário
+    setFormData({
+      nome: "",
+      telefone: "",
+      email: "",
+      cidade: "",
+      mensagem: "",
+    })
   }
 
   const updateFormData = (field: string, value: string) => {
@@ -27,10 +48,10 @@ export function ContactForm() {
   }
 
   return (
-    <section className="py-16">
+    <section className="py-16 bg-luminar-background dark:bg-gray-900 transition-colors">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
-          <Heading2 className="text-center mb-8 text-gray-900">Entre em contato</Heading2>
+          <Heading2 className="text-center mb-8 text-gray-900 dark:text-white">Entre em contato</Heading2>
           <Card className="p-8">
             <form onSubmit={handleFormSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">

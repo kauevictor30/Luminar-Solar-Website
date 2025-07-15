@@ -10,6 +10,9 @@ interface BenefitCardProps {
   variant?: "primary" | "secondary" | "success" | "warning" | "info"
 }
 
+/**
+ * Card para exibir benefícios com ícone, título e descrição
+ */
 export function BenefitCard({ icon, title, description, variant = "success" }: BenefitCardProps) {
   return (
     <Card className="text-center p-6 hover:shadow-lg transition-shadow">

@@ -7,6 +7,9 @@ interface IconWrapperProps {
   variant?: "primary" | "secondary" | "success" | "warning" | "info"
 }
 
+/**
+ * Componente para envolver ícones com estilos consistentes
+ */
 export function IconWrapper({ children, className = "", size = "md", variant = "primary" }: IconWrapperProps) {
   const sizeClasses = {
     sm: "w-12 h-12",

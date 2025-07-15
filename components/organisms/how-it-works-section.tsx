@@ -1,6 +1,9 @@
 import { StepCard } from "../molecules/step-card"
 import { Heading2 } from "../atoms/typography"
 
+/**
+ * Seção que explica como funciona o processo
+ */
 export function HowItWorksSection() {
   const steps = [
     {

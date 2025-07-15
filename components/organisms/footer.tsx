@@ -2,7 +2,11 @@ import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react
 import { SocialIcon } from "../molecules/social-icon"
 import { Heading3, BodyText } from "../atoms/typography"
 import Image from "next/image"
+import { siteConfig } from "@/config/site"
 
+/**
+ * Rodapé do site com informações de contato e links
+ */
 export function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12">
@@ -17,22 +21,32 @@ export function Footer() {
               className="h-10 w-auto brightness-0 invert"
             />
             <BodyText className="text-gray-400">Especialistas em energia solar fotovoltaica</BodyText>
+            <BodyText className="text-gray-400">CNPJ: {siteConfig.company.cnpj}</BodyText>
           </div>
 
           <div className="space-y-4">
             <Heading3 className="text-white">Contato</Heading3>
             <div className="space-y-2 text-gray-400">
               <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4" />
-                <span>(11) 99999-9999</span>
+                <Phone className="h-4 w-4 flex-shrink-0" />
+                <a
+                  href={siteConfig.contact.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  {siteConfig.contact.phone}
+                </a>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4" />
-                <span>contato@luminarsolar.com.br</span>
+                <Mail className="h-4 w-4 flex-shrink-0" />
+                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-white transition-colors">
+                  {siteConfig.contact.email}
+                </a>
               </div>
-              <div className="flex items-center space-x-2">
-                <MapPin className="h-4 w-4" />
-                <span>São Paulo - SP</span>
+              <div className="flex items-start space-x-2">
+                <MapPin className="h-4 w-4 flex-shrink-0 mt-1" />
+                <span>{siteConfig.company.address}</span>
               </div>
             </div>
           </div>
@@ -52,15 +66,26 @@ export function Footer() {
           <div className="space-y-4">
             <Heading3 className="text-white">Redes Sociais</Heading3>
             <div className="flex space-x-4">
-              <SocialIcon icon={<Facebook />} />
-              <SocialIcon icon={<Instagram />} />
-              <SocialIcon icon={<Linkedin />} />
+              <SocialIcon icon={<Facebook />} href={siteConfig.social.facebookUrl} label="Facebook Luminar Solar" />
+              <SocialIcon icon={<Instagram />} href={siteConfig.social.instagramUrl} label="Instagram Luminar Solar" />
+              <SocialIcon icon={<Linkedin />} href={siteConfig.social.linkedinUrl} label="LinkedIn Luminar Solar" />
             </div>
+            <BodyText className="text-gray-400">
+              Instagram:{" "}
+              <a
+                href={siteConfig.social.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                {siteConfig.social.instagram}
+              </a>
+            </BodyText>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <BodyText>&copy; 2024 Luminar Solar. Todos os direitos reservados.</BodyText>
+          <BodyText>&copy; {new Date().getFullYear()} Luminar Solar. Todos os direitos reservados.</BodyText>
         </div>
       </div>
     </footer>

@@ -2,6 +2,9 @@ import { Calculator, Zap, Clock, MapPin } from "lucide-react"
 import { BenefitCard } from "../molecules/benefit-card"
 import { Heading2 } from "../atoms/typography"
 
+/**
+ * Seção de benefícios com cards
+ */
 export function BenefitsSection() {
   const benefits = [
     {
@@ -31,9 +34,9 @@ export function BenefitsSection() {
   ]
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section id="beneficios" className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors">
       <div className="container mx-auto px-4">
-        <Heading2 className="text-center mb-12 text-gray-900">Por que escolher energia solar?</Heading2>
+        <Heading2 className="text-center mb-12 text-gray-900 dark:text-white">Por que escolher energia solar?</Heading2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
             <BenefitCard key={index} {...benefit} />

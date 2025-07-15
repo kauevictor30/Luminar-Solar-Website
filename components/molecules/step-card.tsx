@@ -6,6 +6,9 @@ interface StepCardProps {
   description: string
 }
 
+/**
+ * Card para exibir passos numerados de um processo
+ */
 export function StepCard({ number, title, description }: StepCardProps) {
   return (
     <div className="text-center">

@@ -9,6 +9,9 @@ interface ProjectCardProps {
   imageUrl?: string
 }
 
+/**
+ * Card para exibir projetos realizados com imagem e informações
+ */
 export function ProjectCard({ type, location, imageUrl }: ProjectCardProps) {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow">

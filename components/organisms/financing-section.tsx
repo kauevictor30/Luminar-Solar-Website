@@ -2,6 +2,9 @@ import { CreditCard, CheckCircle, Shield } from "lucide-react"
 import { IconWrapper } from "../atoms/icon-wrapper"
 import { Heading2, Heading3, BodyText } from "../atoms/typography"
 
+/**
+ * Seção sobre opções de financiamento
+ */
 export function FinancingSection() {
   const features = [
     {

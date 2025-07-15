@@ -9,6 +9,9 @@ interface TestimonialCardProps {
   rating?: number
 }
 
+/**
+ * Card para exibir depoimentos de clientes
+ */
 export function TestimonialCard({ name, city, comment, rating = 5 }: TestimonialCardProps) {
   return (
     <Card className="p-6">

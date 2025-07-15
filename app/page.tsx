@@ -1,4 +1,5 @@
 "use client"
+import { ThemeProvider } from "@/hooks/use-theme"
 import { LandingPageTemplate } from "@/templates/landing-page-template"
 import { Header } from "@/components/organisms/header"
 import { HeroSection } from "@/components/organisms/hero-section"
@@ -12,25 +13,33 @@ import { FinancingSection } from "@/components/organisms/financing-section"
 import { CTASection } from "@/components/organisms/cta-section"
 import { ContactForm } from "@/components/organisms/contact-form"
 import { Footer } from "@/components/organisms/footer"
-import { MapsSection } from "@/components/organisms/maps-section"
+import { ImprovedMapsSection } from "@/components/organisms/improved-maps-section"
+import { PartnersSection } from "@/components/organisms/partners-section"
+import { FAQSection } from "@/components/organisms/faq-section"
 
-// Add maps prop to the template
+/**
+ * Página principal do site Luminar Solar com tema claro/escuro
+ */
 export default function HomePage() {
   return (
-    <LandingPageTemplate
-      header={<Header />}
-      hero={<HeroSection />}
-      benefits={<BenefitsSection />}
-      about={<AboutSection />}
-      howItWorks={<HowItWorksSection />}
-      simulator={<EconomySimulator />}
-      maps={<MapsSection />}
-      projects={<ProjectsGallery />}
-      testimonials={<TestimonialsSection />}
-      financing={<FinancingSection />}
-      cta={<CTASection />}
-      contact={<ContactForm />}
-      footer={<Footer />}
-    />
+    <ThemeProvider>
+      <LandingPageTemplate
+        header={<Header />}
+        hero={<HeroSection />}
+        benefits={<BenefitsSection />}
+        about={<AboutSection />}
+        howItWorks={<HowItWorksSection />}
+        simulator={<EconomySimulator />}
+        maps={<ImprovedMapsSection />}
+        partners={<PartnersSection />}
+        projects={<ProjectsGallery />}
+        testimonials={<TestimonialsSection />}
+        financing={<FinancingSection />}
+        cta={<CTASection />}
+        contact={<ContactForm />}
+        faq={<FAQSection />}
+        footer={<Footer />}
+      />
+    </ThemeProvider>
   )
 }

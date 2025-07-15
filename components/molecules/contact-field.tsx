@@ -11,6 +11,9 @@ interface ContactFieldProps {
   placeholder?: string
 }
 
+/**
+ * Campo de formulário com label para uso em formulários de contato
+ */
 export function ContactField({
   label,
   type = "text",

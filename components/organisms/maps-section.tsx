@@ -7,6 +7,9 @@ import { Input } from "@/components/ui/input"
 import { MapPin, Navigation } from "lucide-react"
 import { Heading2, Heading3, BodyText } from "../atoms/typography"
 
+/**
+ * Seção com integração de mapas para visualizar propriedades
+ */
 export function MapsSection() {
   const [endereco, setEndereco] = useState("")
   const [mostrarMapa, setMostrarMapa] = useState(false)

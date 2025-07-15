@@ -1,6 +1,9 @@
 import { TestimonialCard } from "../molecules/testimonial-card"
 import { Heading2 } from "../atoms/typography"
 
+/**
+ * Seção de depoimentos de clientes
+ */
 export function TestimonialsSection() {
   const testimonials = [
     {
@@ -21,9 +24,9 @@ export function TestimonialsSection() {
   ]
 
   return (
-    <section className="py-16">
+    <section className="py-16 bg-luminar-background dark:bg-gray-900 transition-colors">
       <div className="container mx-auto px-4">
-        <Heading2 className="text-center mb-12 text-gray-900">O que nossos clientes dizem</Heading2>
+        <Heading2 className="text-center mb-12 text-gray-900 dark:text-white">O que nossos clientes dizem</Heading2>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} {...testimonial} />
