@@ -86,7 +86,7 @@ export function ContactForm() {
               <div>
                 <label className="block text-sm font-medium mb-2">Mensagem</label>
                 <textarea
-                  className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                  className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-yellow-500 focus:border-transparent bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600"
                   rows={4}
                   value={formData.mensagem}
                   onChange={(e) => updateFormData("mensagem", e.target.value)}

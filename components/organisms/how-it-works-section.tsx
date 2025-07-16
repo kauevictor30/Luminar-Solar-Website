@@ -29,9 +29,11 @@ export function HowItWorksSection() {
   ]
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
       <div className="container mx-auto px-4">
-        <Heading2 className="text-center mb-12 text-gray-900">Como funciona</Heading2>
+        <Heading2 className="text-center mb-12 text-gray-900 dark:text-white">
+          Como funciona
+        </Heading2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <StepCard key={index} {...step} />

@@ -55,32 +55,36 @@ export function FAQSection() {
           <Heading2 className="text-center mb-12 text-gray-900 dark:text-white">Perguntas Frequentes</Heading2>
 
           <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="overflow-hidden">
-                <CardContent className="p-0">
-                  <button
-                    onClick={() => toggleFAQ(index)}
-                    className="w-full p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                  >
-                    <div className="flex justify-between items-center">
-                      <Heading3 className="text-gray-900 dark:text-white pr-4">{faq.question}</Heading3>
-                      {openIndex === index ? (
-                        <ChevronUp className="h-5 w-5 text-luminar-blue dark:text-luminar-yellow flex-shrink-0" />
-                      ) : (
-                        <ChevronDown className="h-5 w-5 text-luminar-blue dark:text-luminar-yellow flex-shrink-0" />
-                      )}
-                    </div>
-                  </button>
+          {faqs.map((faq, index) => (
+            <Card key={index} className="overflow-hidden transition-all duration-300 ease-in-out">
+              <CardContent className="p-0">
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full p-6 text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
+                >
+                  <div className="flex justify-between items-center">
+                    <Heading3 className="text-gray-900 dark:text-white pr-4">{faq.question}</Heading3>
+                    {openIndex === index ? (
+                      <ChevronUp className="h-5 w-5 text-luminar-blue dark:text-luminar-yellow flex-shrink-0 transition-transform duration-300" />
+                    ) : (
+                      <ChevronDown className="h-5 w-5 text-luminar-blue dark:text-luminar-yellow flex-shrink-0 transition-transform duration-300" />
+                    )}
+                  </div>
+                </button>
 
-                  {openIndex === index && (
-                    <div className="px-6 pb-6">
-                      <BodyText className="dark:text-gray-300">{faq.answer}</BodyText>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    openIndex === index ? "max-h-96" : "max-h-0"
+                  }`}
+                >
+                  <div className="px-6 pb-6">
+                    <BodyText className="dark:text-gray-300">{faq.answer}</BodyText>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
         </div>
       </div>
     </section>

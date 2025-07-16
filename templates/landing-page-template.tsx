@@ -14,7 +14,6 @@ interface LandingPageTemplateProps {
   financing: React.ReactNode
   cta: React.ReactNode
   contact: React.ReactNode
-  blog: React.ReactNode
   faq: React.ReactNode
   footer: React.ReactNode
 }
@@ -36,7 +35,6 @@ export function LandingPageTemplate({
   financing,
   cta,
   contact,
-  blog,
   faq,
   footer,
 }: LandingPageTemplateProps) {
@@ -55,7 +53,6 @@ export function LandingPageTemplate({
       {financing}
       {cta}
       {contact}
-      {blog}
       {faq}
       {footer}
     </div>

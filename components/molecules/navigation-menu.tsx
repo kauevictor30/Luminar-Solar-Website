@@ -20,7 +20,6 @@ export function NavigationMenu({ className = "" }: NavigationMenuProps) {
     { label: "Benefícios", href: "#beneficios" },
     { label: "Parceiros", href: "#parceiros" },
     { label: "Galeria", href: "#galeria" },
-    { label: "Blog", href: "#blog" },
     { label: "FAQ", href: "#faq" },
   ]
 
