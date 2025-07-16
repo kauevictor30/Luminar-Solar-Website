@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Luminar Solar',
-  description: 'Landing page for Luminar Solar',
+  description: 'A energia solar que ilumina o seu futuro',
   generator: 'kauevictor.dev',
   icons: {
     icon: '/icone-site.png', // aqui aponta pro arquivo dentro da pasta public
