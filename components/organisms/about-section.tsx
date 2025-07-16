@@ -20,13 +20,13 @@ export function AboutSection() {
             </BodyText>
           </div>
           <div className="relative order-1 lg:order-2">
-            <Image
-              src="/placeholder.svg?height=300&width=500"
-              alt="Equipe Luminar Solar"
-              width={500}
-              height={300}
-              className="rounded-lg shadow-lg w-full h-auto"
-            />
+          <Image
+            src="/Luminar%20solarr.png" // use %20 no lugar do espaço
+            alt="Equipe Luminar Solar"
+            width={500}
+            height={300}
+            className="rounded-lg shadow-lg w-full h-auto"
+          />
           </div>
         </div>
       </div>

@@ -3,8 +3,8 @@ import type React from "react"
 interface LandingPageTemplateProps {
   header: React.ReactNode
   hero: React.ReactNode
-  benefits: React.ReactNode
   about: React.ReactNode
+  benefits: React.ReactNode
   howItWorks: React.ReactNode
   simulator: React.ReactNode
   maps: React.ReactNode
@@ -13,8 +13,8 @@ interface LandingPageTemplateProps {
   testimonials: React.ReactNode
   financing: React.ReactNode
   cta: React.ReactNode
-  contact: React.ReactNode
   faq: React.ReactNode
+  contact: React.ReactNode
   footer: React.ReactNode
 }
 
@@ -24,8 +24,8 @@ interface LandingPageTemplateProps {
 export function LandingPageTemplate({
   header,
   hero,
-  benefits,
   about,
+  benefits,
   howItWorks,
   simulator,
   maps,
@@ -34,16 +34,16 @@ export function LandingPageTemplate({
   testimonials,
   financing,
   cta,
-  contact,
   faq,
+  contact,
   footer,
 }: LandingPageTemplateProps) {
   return (
     <div className="min-h-screen bg-luminar-background dark:bg-gray-900 transition-colors">
       {header}
       {hero}
-      {benefits}
       {about}
+      {benefits}
       {howItWorks}
       {simulator}
       {maps}
@@ -52,8 +52,8 @@ export function LandingPageTemplate({
       {testimonials}
       {financing}
       {cta}
-      {contact}
       {faq}
+      {contact}
       {footer}
     </div>
   )

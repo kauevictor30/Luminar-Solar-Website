@@ -36,8 +36,8 @@ export default function HomePage() {
         testimonials={<TestimonialsSection />}
         financing={<FinancingSection />}
         cta={<CTASection />}
-        contact={<ContactForm />}
         faq={<FAQSection />}
+        contact={<ContactForm />}
         footer={<Footer />}
       />
     </ThemeProvider>
