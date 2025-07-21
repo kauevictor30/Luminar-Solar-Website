@@ -11,12 +11,10 @@ export function PartnersSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const partners = [
-    { name: "Energia Plus", logo: "/placeholder.svg?height=80&width=160&text=Energia+Plus" },
-    { name: "Solar Tech", logo: "/placeholder.svg?height=80&width=160&text=Solar+Tech" },
-    { name: "Green Power", logo: "/placeholder.svg?height=80&width=160&text=Green+Power" },
-    { name: "Eco Solutions", logo: "/placeholder.svg?height=80&width=160&text=Eco+Solutions" },
-    { name: "Sun Energy", logo: "/placeholder.svg?height=80&width=160&text=Sun+Energy" },
-    { name: "Clean Force", logo: "/placeholder.svg?height=80&width=160&text=Clean+Force" },
+    { name: "Banco do Brasil", logo: "/bb.svg" },
+    { name: "Banco do nordeste", logo: "/bnb.svg" },
+    { name: "BV", logo: "/bv.svg" },
+    { name: "Solfácil", logo: "/solfacil.svg" },
   ]
 
   // Auto-rotate carousel

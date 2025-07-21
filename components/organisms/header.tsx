@@ -41,12 +41,12 @@ export function Header() {
             </div>
 
             {/* CTA Button - Responsive sizing */}
-            <a href={siteConfig.contact.whatsappUrl} target="_blank" rel="noopener noreferrer">
+            {/* <a href={siteConfig.contact.whatsappUrl} target="_blank" rel="noopener noreferrer">
               <Button className="bg-luminar-yellow hover:bg-yellow-600 text-luminar-blue font-semibold px-3 sm:px-4 md:px-6 text-sm sm:text-base">
                 <span className="hidden sm:inline">Orçamento</span>
                 <span className="sm:hidden">Orçar</span>
               </Button>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
