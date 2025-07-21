@@ -3,14 +3,12 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import clsx from "clsx"
 
 interface NavigationMenuProps {
   className?: string
 }
 
-/**
- * Menu de navegação otimizado para mobile
- */
 export function NavigationMenu({ className = "" }: NavigationMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -33,7 +31,7 @@ export function NavigationMenu({ className = "" }: NavigationMenuProps) {
 
   return (
     <nav className={className}>
-      {/* Desktop Menu */}
+      {/* Desktop */}
       <div className="hidden lg:flex space-x-6 xl:space-x-8">
         {menuItems.map((item) => (
           <button
@@ -46,7 +44,7 @@ export function NavigationMenu({ className = "" }: NavigationMenuProps) {
         ))}
       </div>
 
-      {/* Mobile Menu Button */}
+      {/* Botão Mobile */}
       <div className="lg:hidden">
         <Button
           variant="ghost"
@@ -58,28 +56,33 @@ export function NavigationMenu({ className = "" }: NavigationMenuProps) {
         </Button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Backdrop */}
       {isOpen && (
-        <>
-          {/* Backdrop */}
-          <div className="fixed inset-0 bg-black/50 lg:hidden z-40" onClick={() => setIsOpen(false)} />
-
-          {/* Menu Panel */}
-          <div className="fixed top-[73px] left-0 right-0 bg-white dark:bg-gray-900 shadow-lg border-t lg:hidden z-50 max-h-[calc(100vh-73px)] overflow-y-auto">
-            <div className="py-4 px-4 space-y-1">
-              {menuItems.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={() => handleLinkClick(item.href)}
-                  className="block w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 rounded-md transition-colors font-medium"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </>
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setIsOpen(false)}
+        />
       )}
+
+      {/* Menu Lateral Mobile (lado direito) */}
+      <div
+        className={clsx(
+          "fixed top-0 right-0 w-64 h-full bg-white dark:bg-gray-900 shadow-lg z-50 transform transition-transform duration-300 lg:hidden",
+          isOpen ? "translate-x-0" : "translate-x-full"
+        )}
+      >
+        <div className="py-4 px-4 space-y-1">
+          {menuItems.map((item) => (
+            <button
+              key={item.label}
+              onClick={() => handleLinkClick(item.href)}
+              className="block w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 rounded-md transition-colors font-medium"
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      </div>
     </nav>
   )
 }
