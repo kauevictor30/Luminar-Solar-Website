@@ -27,7 +27,7 @@ export function ContactForm() {
     console.log("Formulário enviado:", formData)
 
     // Mensagem de WhatsApp formatada
-    const mensagemWhatsApp = `Olá, sou ${formData.nome} de ${formData.cidade}. ${formData.mensagem}`
+    const mensagemWhatsApp = `Olá, sou ${formData.nome} meu e-mail é ${formData.email} de ${formData.cidade}. ${formData.mensagem}`
     const whatsappUrl = `${siteConfig.contact.whatsappUrl}?text=${encodeURIComponent(mensagemWhatsApp)}`
 
     // Redirecionar para o WhatsApp

@@ -4,23 +4,19 @@ import { useState, useEffect } from "react"
 import { Heading2 } from "../atoms/typography"
 import Image from "next/image"
 
-/**
- * Seção de parceiros com carrossel de logotipos
- */
 export function PartnersSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const partners = [
-    { name: "Banco do Brasil", logo: "/bb.svg" },
-    { name: "Banco do nordeste", logo: "/bnb.svg" },
-    { name: "BV", logo: "/bv.svg" },
-    { name: "Solfácil", logo: "/solfacil.svg" },
+    { name: "Banco do Brasil", logo: "/bb.svg", lightLogo: false },
+    { name: "Banco do nordeste", logo: "/bnb.svg", lightLogo: false },
+    { name: "BV", logo: "/bv.svg", lightLogo: false },
+    { name: "Solfácil", logo: "/solfacil.svg", lightLogo: true }, // precisa de fundo
   ]
 
-  // Auto-rotate carousel
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % Math.ceil(partners.length / 3))
+      setCurrentIndex((prev) => (prev + 1) % Math.ceil(partners.length / 2))
     }, 3000)
     return () => clearInterval(interval)
   }, [partners.length])
@@ -35,14 +31,15 @@ export function PartnersSection() {
           {partners.map((partner, index) => (
             <div
               key={index}
-              className="flex items-center justify-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+              className={`flex items-center justify-center p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow 
+                ${partner.lightLogo ? "bg-gray-100 dark:bg-gray-700" : "bg-white dark:bg-gray-700"}`}
             >
               <Image
-                src={partner.logo || "/placeholder.svg"}
+                src={partner.logo}
                 alt={`Logo ${partner.name}`}
                 width={160}
                 height={80}
-                className="max-w-full h-auto opacity-70 hover:opacity-100 transition-opacity"
+                className="max-w-full h-auto opacity-100"
               />
             </div>
           ))}
@@ -61,14 +58,15 @@ export function PartnersSection() {
                     {partners.slice(slideIndex * 2, slideIndex * 2 + 2).map((partner, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm"
+                        className={`flex items-center justify-center p-4 rounded-lg shadow-sm
+                          ${partner.lightLogo ? "bg-gray-100 dark:bg-gray-700" : "bg-white dark:bg-gray-700"}`}
                       >
                         <Image
-                          src={partner.logo || "/placeholder.svg"}
+                          src={partner.logo}
                           alt={`Logo ${partner.name}`}
                           width={120}
                           height={60}
-                          className="max-w-full h-auto opacity-70"
+                          className="max-w-full h-auto opacity-100"
                         />
                       </div>
                     ))}
@@ -78,7 +76,7 @@ export function PartnersSection() {
             </div>
           </div>
 
-          {/* Carousel Indicators */}
+          {/* Indicadores */}
           <div className="flex justify-center mt-6 space-x-2">
             {Array.from({ length: Math.ceil(partners.length / 2) }).map((_, index) => (
               <button
