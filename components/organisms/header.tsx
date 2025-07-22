@@ -7,11 +7,11 @@ import { NavigationMenu } from "../molecules/navigation-menu"
 import { ThemeToggle } from "../molecules/theme-toggle"
 
 /**
- * Cabeçalho do site otimizado para mobile
+ * Cabeçalho do site com efeito vidro (glassmorphism)
  */
 export function Header() {
   return (
-    <header className="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50 transition-colors">
+    <header className="sticky top-0 z-50 backdrop-blur-md bg-white/30 dark:bg-gray-900/30 border-b border-white/20 dark:border-gray-700 transition-colors">
       <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo - Otimizada para mobile */}
@@ -40,7 +40,7 @@ export function Header() {
               <NavigationMenu />
             </div>
 
-            {/* CTA Button - Responsive sizing */}
+            {/* CTA Button - Comentado */}
             {/* <a href={siteConfig.contact.whatsappUrl} target="_blank" rel="noopener noreferrer">
               <Button className="bg-luminar-yellow hover:bg-yellow-600 text-luminar-blue font-semibold px-3 sm:px-4 md:px-6 text-sm sm:text-base">
                 <span className="hidden sm:inline">Orçamento</span>

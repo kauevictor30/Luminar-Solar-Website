@@ -1,3 +1,4 @@
+// Seção de Parceiros - Versão com centralização no desktop
 "use client"
 
 import { useState, useEffect } from "react"
@@ -8,10 +9,10 @@ export function PartnersSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const partners = [
-    { name: "Banco do Brasil", logo: "/bb.svg", lightLogo: false },
-    { name: "Banco do nordeste", logo: "/bnb.svg", lightLogo: false },
-    { name: "BV", logo: "/bv.svg", lightLogo: false },
-    { name: "Solfácil", logo: "/solfacil.svg", lightLogo: true }, // precisa de fundo
+    { name: "Banco do Brasil", logo: "/bb.svg" },
+    { name: "Banco do nordeste", logo: "/bnb.svg" },
+    { name: "BV", logo: "/bv.svg" },
+    { name: "Solfácil", logo: "/solfacil.svg" },
   ]
 
   useEffect(() => {
@@ -26,25 +27,30 @@ export function PartnersSection() {
       <div className="container mx-auto px-4">
         <Heading2 className="text-center mb-12 text-gray-900 dark:text-white">Nossos Parceiros</Heading2>
 
-        {/* Desktop Grid */}
-        <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className={`flex items-center justify-center p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow 
-                ${partner.lightLogo ? "bg-gray-100 dark:bg-gray-700" : "bg-white dark:bg-gray-700"}`}
-            >
-              <Image
-                src={partner.logo}
-                alt={`Logo ${partner.name}`}
-                width={160}
-                height={80}
-                className="max-w-full h-auto opacity-100"
-              />
+        {/* Desktop Grid - CENTRALIZADO */}
+        <div className="hidden md:flex justify-center">
+          <div className="hidden md:flex justify-center">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
+              {partners.map((partner, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-center p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow 
+                    bg-luminar-blue dark:bg-gray-700 h-40 w-48"
+                >
+                  <Image
+                    src={partner.logo}
+                    alt={`Logo ${partner.name}`}
+                    width={160}
+                    height={80}
+                    className="max-w-full h-auto object-contain"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
+        
         {/* Mobile Carousel */}
         <div className="md:hidden">
           <div className="overflow-hidden">
@@ -58,15 +64,15 @@ export function PartnersSection() {
                     {partners.slice(slideIndex * 2, slideIndex * 2 + 2).map((partner, index) => (
                       <div
                         key={index}
-                        className={`flex items-center justify-center p-4 rounded-lg shadow-sm
-                          ${partner.lightLogo ? "bg-gray-100 dark:bg-gray-700" : "bg-white dark:bg-gray-700"}`}
+                        className="flex items-center justify-center p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow
+                          bg-luminar-blue dark:bg-gray-700 h-32 border border-gray-200/30 dark:border-gray-600/30"
                       >
                         <Image
                           src={partner.logo}
                           alt={`Logo ${partner.name}`}
                           width={120}
                           height={60}
-                          className="max-w-full h-auto opacity-100"
+                          className="max-w-full h-auto object-contain"
                         />
                       </div>
                     ))}

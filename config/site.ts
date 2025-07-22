@@ -16,10 +16,10 @@ export const siteConfig = {
     address: "Avenida Porto Alegre, 299, Guabiraba, Luzilândia-PI",
   },
   social: {
-    instagram: "@luminar.solar",
+    instagram: "luminar.solar",
     instagramUrl: "https://instagram.com/luminar.solar",
     facebook: "luminarsolar",
-    facebookUrl: "https://facebook.com/luminarsolar",
+    facebookUrl: "https://www.facebook.com/profile.php?id=61568470707818",
     linkedin: "luminarsolar",
     linkedinUrl: "https://linkedin.com/company/luminarsolar",
   },
