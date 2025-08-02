@@ -13,6 +13,7 @@ export function PartnersSection() {
     { name: "Banco do nordeste", logo: "/bnb.svg" },
     { name: "BV", logo: "/bv.svg" },
     { name: "Solfácil", logo: "/solfacil.svg" },
+    { name: "Sol Agora", logo: "/Logo_Sol_Agora.png" },
   ]
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export function PartnersSection() {
 
   return (
     <section id="parceiros" className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <Heading2 className="text-center mb-12 text-gray-900 dark:text-white">Nossos Parceiros</Heading2>
 
         {/* Desktop Grid - CENTRALIZADO */}
