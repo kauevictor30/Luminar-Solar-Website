@@ -8,7 +8,7 @@ import Link from "next/link"
 export function Footer() {
   return (
     <footer className="bg-luminar-blue text-white py-8 sm:py-12">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Seção Logo */}
           <div className="space-y-4 text-center sm:text-left">
@@ -38,12 +38,12 @@ export function Footer() {
                   {siteConfig.contact.phone}
                 </a>
               </div>
-              <div className="flex items-center justify-center sm:justify-start space-x-2">
+              {/* <div className="flex items-center justify-center sm:justify-start space-x-2">
                 <Mail className="h-4 w-4 flex-shrink-0" />
                 <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-white transition-colors">
                   {siteConfig.contact.email}
                 </a>
-              </div>
+              </div> */}
               <div className="flex items-start justify-center sm:justify-start space-x-2">
                 <MapPin className="h-4 w-4 flex-shrink-0 mt-1" />
                 <span className="text-center sm:text-left">{siteConfig.company.address}</span>
@@ -52,9 +52,9 @@ export function Footer() {
           </div>
 
           {/* Seção Links */}
-          <div className="space-y-4 text-center sm:text-left">
+          {/* <div className="space-y-4 text-center sm:text-left"> */}
             {/* <Heading3 className="text-white">Links</Heading3> */}
-            <div className="space-y-2">
+            {/* <div className="space-y-2"> */}
               {/* <Link 
                 href="/sobre" 
                 className="block text-gray-400 hover:text-white transition-colors"
@@ -73,8 +73,8 @@ export function Footer() {
               >
                 Termos de Uso
               </Link> */}
-            </div>
-          </div>
+            {/* </div> */}
+          {/* </div> */}
 
           {/* Seção Redes Sociais */}
           <div className="space-y-4 text-center sm:text-left">
@@ -84,7 +84,7 @@ export function Footer() {
               <SocialIcon icon={<Instagram />} href={siteConfig.social.instagramUrl} label="Instagram Luminar Solar" />
               <SocialIcon icon={<Linkedin />} href={siteConfig.social.linkedinUrl} label="LinkedIn Luminar Solar" />
             </div>
-            <BodyText className="text-gray-400 text-sm">
+            {/* <BodyText className="text-gray-400 text-sm">
               Instagram:{" "}
               <a
                 href={siteConfig.social.instagramUrl}
@@ -94,7 +94,7 @@ export function Footer() {
               >
                 {siteConfig.social.instagram}
               </a>
-            </BodyText>
+            </BodyText> */}
           </div>
         </div>
 
