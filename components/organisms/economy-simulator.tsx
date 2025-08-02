@@ -22,7 +22,7 @@ export function EconomySimulator() {
 
   return (
     <section className="py-12 sm:py-16 bg-luminar-background dark:bg-gray-900 transition-colors">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-2xl mx-auto text-center">
           <Heading2 className="mb-6 text-gray-900 dark:text-white">Simule sua economia</Heading2>
           <Card className="p-4 sm:p-8">
