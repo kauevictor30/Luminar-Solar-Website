@@ -17,7 +17,7 @@ export function ImprovedMapsSection() {
 
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <Heading2 className="text-gray-900 dark:text-white mb-4">Nossa Localização</Heading2>
