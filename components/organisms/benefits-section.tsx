@@ -35,7 +35,7 @@ export function BenefitsSection() {
 
   return (
     <section id="beneficios" className="py-12 sm:py-16 bg-gray-50 dark:bg-gray-800 transition-colors">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <Heading2 className="text-center mb-8 sm:mb-12 text-gray-900 dark:text-white">
           Por que escolher energia solar?
         </Heading2>
