@@ -50,7 +50,7 @@ export function FAQSection() {
 
   return (
     <section id="faq" className="py-16 bg-luminar-background dark:bg-gray-900 transition-colors">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-3xl mx-auto">
           <Heading2 className="text-center mb-12 text-gray-900 dark:text-white">Perguntas Frequentes</Heading2>
 
