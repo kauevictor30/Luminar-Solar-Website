@@ -28,8 +28,8 @@ export function FinancingSection() {
   ]
 
   return (
-    <section className="py-16 bg-blue-50 dark:bg-gray-800 transition-colors duration-300">
-      <div className="container mx-auto px-4">
+    <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto text-center">
           <Heading2 className="mb-6 text-gray-900 dark:text-white">
             Financiamento facilitado
