@@ -30,7 +30,7 @@ export function HowItWorksSection() {
 
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <Heading2 className="text-center mb-12 text-gray-900 dark:text-white">
           Como funciona
         </Heading2>
