@@ -5,11 +5,10 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative flex items-center justify-center text-center px-4 py-12 sm:py-20 md:py-24 bg-cover bg-center min-h-[120vh]"
+      className="relative flex items-start justify-center text-center px-4 pt-16 pb-20 sm:pt-20 sm:pb-24 bg-cover bg-center min-h-screen"
       style={{ backgroundImage: "url('/hero.png')" }}
     >
-      {/* Conteúdo centralizado com sombra no texto */}
-      <div className="z-10 max-w-2xl w-full text-white -translate-y-20">
+      <div className="z-10 max-w-2xl w-full text-white">
         <h1
           className="text-4xl font-bold md:text-5xl lg:text-6xl"
           style={{
@@ -20,7 +19,7 @@ export function HeroSection() {
           Economize com energia solar
         </h1>
         <p
-          className="mt-4 text-lg sm:text-x"
+          className="mt-4 text-lg sm:text-xl"
           style={{
             color: "#001D4A",
             textShadow: "1px 1px 4px rgba(0,0,0,0.6)"
@@ -36,7 +35,7 @@ export function HeroSection() {
             >
               Fale com um especialista
             </Button>
-          </a>  
+          </a>
         </div>
       </div>
     </section>
