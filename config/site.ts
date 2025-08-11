@@ -27,4 +27,20 @@ export const siteConfig = {
     blue: "#001A51",
     yellow: "#FBBC05",
   },
+  // SEO
+  url: "https://luminarsola.com.br", // ASSUMPTION: domínio principal do site
+  ogImagePath: "/logo-luminar.png",
+  keywords: [
+    "energia solar",
+    "energia fotovoltaica",
+    "instalação de energia solar",
+    "projeto de energia solar",
+    "painel solar",
+    "economia de energia",
+    "Luzilândia",
+    "Parnaíba",
+    "Piauí",
+    "sistema fotovoltaico",
+    "empresa de energia solar",
+  ],
 }
